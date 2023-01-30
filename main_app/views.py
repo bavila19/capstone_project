@@ -34,6 +34,9 @@ class PlantInfo(TemplateView):
         return context
 # My plant class 
 
+class MyPlantList(TemplateView):
+    template_name= "my_plant_list.html"
+
 # About 
 class About(TemplateView):
     template_name= "about.html"
