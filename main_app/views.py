@@ -11,9 +11,11 @@ class Home(TemplateView):
 
 
 # Plant info class 
-
+class Plant_info(TemplateView):
+    template_name= "plant_info.html"
 # My plant class 
 
 # About 
 class About(TemplateView):
     template_name= "about.html"
+
