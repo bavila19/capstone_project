@@ -1,8 +1,32 @@
 
-{%extends 'base.html'%}
-{%block title%}
-My plants  
-{%endblock%}
-{%block content%}
-<h1>Plants </h1>
-{%endblock%}
+{% extends 'base.html' %}
+
+{% comment %} for head title tags and helping us with SEO {% endcomment %}
+{% block title %}My Plant Info{% endblock%}
+
+{% block content %}
+
+<h1 class="title pt-5">Plant list</h1>
+<div class="gallery">
+  {% for myplant in myplants %}
+  <a href="">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-square">
+          <img src="{{myplant.image}}" alt="{{myplant.name}}" />
+        </figure>
+      </div>
+      <div class="card-header">
+        <p class="card-header-title">{{myplant.name}}</p>
+      </div>
+    </div>
+  </a>
+	{% empty %}
+  <article class="message">
+    <div class="message-header">
+      <p>No plants Available</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}
