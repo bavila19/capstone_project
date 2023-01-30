@@ -11,10 +11,34 @@
     </body>
 </html> -->
 
-{%extends 'base.html'%}
-{%block title%}
-Plant Info
-{%endblock%}
-{%block content%}
-<h1> Plant information will go here </h1>
-{%endblock%}
+{% extends 'base.html' %}
+
+{% comment %} for head title tags and helping us with SEO {% endcomment %}
+{% block title %}Artist{% endblock  %}
+
+{% block content %}
+
+<h1 class="title pt-5">Plant information</h1>
+<div class="gallery">
+  {% for plant in plants %}
+  <a href="">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-square">
+          <img src="{{plant.image}}" alt="{{plant.name}}" />
+        </figure>
+      </div>
+      <div class="card-header">
+        <p class="card-header-title">{{plant.name}}</p>
+      </div>
+    </div>
+  </a>
+	{% empty %}
+  <article class="message">
+    <div class="message-header">
+      <p>No plants Available</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}
