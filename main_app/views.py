@@ -3,7 +3,10 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 # This will import the class we are extending 
 from django.views.generic.edit import CreateView
+from django.views.generic.detail import DetailView
 from django.http import HttpResponse
+from django.urls import reverse
+
 
 from .models import MyPlant
 # Create your views here.
@@ -56,6 +59,11 @@ class MyPlantCreate (CreateView):
     fields =['name', 'img', 'description', 'watering_info']
     template_name="my_plant_create.html"
     success_url= "/myplants/"
+
+class MyPlantDetail(DetailView):
+    model = MyPlant
+    template_name = "my_plant_detail.html"
+
 # About 
 class About(TemplateView):
     template_name= "about.html"

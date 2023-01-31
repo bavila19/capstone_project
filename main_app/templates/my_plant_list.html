@@ -23,7 +23,7 @@
   </form>
 <div class="gallery">
   {% for myplant in myplants %}
-  <a href="">
+  <a href="{%url 'my_plant_detail' myplant.pk%}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
