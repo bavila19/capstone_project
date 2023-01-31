@@ -1,6 +1,8 @@
 from django.shortcuts import render
 # from django.views import View 
 from django.views.generic.base import TemplateView
+# This will import the class we are extending 
+from django.views.generic.edit import CreateView
 from django.http import HttpResponse
 
 from .models import MyPlant
@@ -34,7 +36,7 @@ class PlantInfo(TemplateView):
         context ["plants"] = plants
         return context
 
-
+# my plants 
 class MyPlantList(TemplateView):
     template_name= "my_plant_list.html"
 
@@ -49,6 +51,11 @@ class MyPlantList(TemplateView):
             context["header"] = "My plants"
         return context
 
+class MyPlantCreate (CreateView):
+    model= MyPlant
+    fields =['name', 'img', 'description', 'watering_info']
+    template_name="my_plant_create.html"
+    success_url= "/myplants/"
 # About 
 class About(TemplateView):
     template_name= "about.html"
