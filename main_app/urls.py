@@ -10,5 +10,6 @@ urlpatterns = [
     path('myplants/new', views.MyPlantCreate.as_view(), name = "my_plant_create"),
     path('myplants/<int:pk>/', views.MyPlantDetail.as_view(), name = "my_plant_detail"),
     path('myplants/<int:pk>/update', views.MyPlantUpdate.as_view(), name = "my_plant_update"),
+    path('myplants/<int:pk>/delete', views.MyPlantDelete.as_view(), name = "my_plant_delete"),
 
 ]
