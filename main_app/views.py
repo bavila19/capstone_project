@@ -50,8 +50,13 @@ class MyPlantList(TemplateView):
     template_name= "my_plant_list.html"
 
     def get_context_data(self, **kwargs):
+
         context = super().get_context_data(**kwargs)
-        context ["myplants"] = MyPlant.objects.all()
+        name = self.request.GET.get("name")
+        if name != None:
+            context ["myplants"] = MyPlant.objects.filter(name__icontains=name)
+        else:    
+            context ["myplants"] = MyPlant.objects.all()
         return context
 
 # About 
