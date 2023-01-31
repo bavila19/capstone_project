@@ -35,28 +35,18 @@ class PlantInfo(TemplateView):
         return context
 
 
-# My plant class 
-# class MyPlant:
-#     def __init__(self, name, image, description, watering):
-#         self.name = name
-#         self.image = image
-#         self.description = description
-#         self.watering = watering
-# myplants =[
-#     MyPlant("ZZ plant(aka Jorge)", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwxdP6xIot54MJ5bpk0kIhgyjV_hWzhGtEjg&usqp=CAU", "it's my plant ", "I water it every week ")
-# ]
-
 class MyPlantList(TemplateView):
     template_name= "my_plant_list.html"
 
     def get_context_data(self, **kwargs):
-
         context = super().get_context_data(**kwargs)
         name = self.request.GET.get("name")
         if name != None:
             context ["myplants"] = MyPlant.objects.filter(name__icontains=name)
+            context["header"]= f"I am looking for {name}"
         else:    
             context ["myplants"] = MyPlant.objects.all()
+            context["header"] = "My plants"
         return context
 
 # About 
