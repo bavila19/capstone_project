@@ -9,7 +9,6 @@ urlpatterns = [
     path('myplants/', views.MyPlantList.as_view(), name = "my_plant_list"),
     path('myplants/new', views.MyPlantCreate.as_view(), name = "my_plant_create"),
     path('myplants/<int:pk>/', views.MyPlantDetail.as_view(), name = "my_plant_detail"),
-
-
+    path('myplants/<int:pk>/update', views.MyPlantUpdate.as_view(), name = "my_plant_update"),
 
 ]

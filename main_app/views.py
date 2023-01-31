@@ -2,7 +2,7 @@ from django.shortcuts import render
 # from django.views import View 
 from django.views.generic.base import TemplateView
 # This will import the class we are extending 
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponse
 from django.urls import reverse
@@ -63,6 +63,14 @@ class MyPlantCreate (CreateView):
 class MyPlantDetail(DetailView):
     model = MyPlant
     template_name = "my_plant_detail.html"
+
+class MyPlantUpdate (UpdateView):
+    model = MyPlant
+    fields = ['name', 'img', 'description', 'watering_info']
+    template_name = "my_plant_update.html"
+    success_url= "/myplants/"
+    # def get_success_url(self):
+    #     return reverse('artist_detail', kwargs={'pk': self.object.pk})
 
 # About 
 class About(TemplateView):
