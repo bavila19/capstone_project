@@ -15,3 +15,14 @@ class MyPlant(models.Model):
 
     class Meta:
         ordering = ['name']
+
+class Plant(models.Model):
+    name = models.CharField(max_length=100)
+    img = models.CharField(max_length=250)
+    description = models.TextField(max_length=500)
+    propagate = models.TextField(max_length=500)
+    toxic = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+        
