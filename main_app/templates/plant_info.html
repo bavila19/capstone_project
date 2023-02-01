@@ -1,15 +1,4 @@
-<!-- <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Plant: info </title>
-    </head>
-    <body>
-        <h1> plant info here</h1>
-    </body>
-</html> -->
+
 
 {% extends 'base.html' %}
 
@@ -19,6 +8,19 @@
 {% block content %}
 
 <h1 class="title pt-5">Plant information</h1>
+<form class="mb-5" method="get">
+  <div class="field has-addons">
+    <div class="control">
+      <!--  Our input will search by name of artist  -->
+      <input class="input" type="text" name="name" placeholder="name" />
+    </div>
+    <div class="control">
+      <input class="button is-success" type="submit" value="Search" />
+    </div>
+  </div>
+  <!--  This anchor tag will redirect back to artist list without a query param -->
+  <a class="button is-dark" href="{% url 'plant_info' %}">Clear Search</a>
+</form>
 <div class="gallery">
   {% for plant in plants %}
   <a href="">
@@ -29,15 +31,16 @@
         </figure>
       </div>
       <div class="card-header">
-        <p class="card-header-title">{{plant.name}}</p>
+        <h2 class="card-header-title">{{plant.name}}</h2>
         
       </div>
       <div class="content">
+        <h5>about plant</h5>
         <p class="card-header-title">{{plant.description}}</p>
+        <h5>propagate</h5>
         <p class="card-header-title">{{plant.propagate}}</p>
+        <h5>Is it toxic to pets?</h5>
         <p class="card-header-title">{{plant.toxic}}</p>
-
-
 
       </div>
     </div>

@@ -22,11 +22,17 @@ class Home(TemplateView):
 class PlantInfo(TemplateView):
     template_name= "plant_info.html"
 
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context ["plants"] = Plant.objects.all()
+        name = self.request.GET.get("name")
+        if name != None:
+            context ["plants"] = Plant.objects.filter(name__icontains=name)
+            context["header"]= f"I am looking for {name}"
+        else:    
+            context ["plants"] = Plant.objects.all()
+            context["header"] = "My plants"
         return context
-
 # my plants 
 class MyPlantList(TemplateView):
     template_name= "my_plant_list.html"
