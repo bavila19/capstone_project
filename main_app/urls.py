@@ -2,8 +2,14 @@ from django.urls import path
 from . import views 
 
 urlpatterns = [
+    #home & task list 
     path('', views.Home.as_view(), name="home"),
+    # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
+    # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
+
+    #about page
     path('about/', views.About.as_view(), name="about"),
+    #plant info
     path('plantinfo/', views.PlantInfo.as_view(), name = "plant_info"),
     # My plant routes 
     path('myplants/', views.MyPlantList.as_view(), name = "my_plant_list"),

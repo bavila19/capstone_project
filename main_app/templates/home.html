@@ -4,5 +4,11 @@ Home
 {% endblock %}
 {% block content %}
 <h1> Home</h1>
-
+{%if water.complete == True %}
+    <strike>{{water}, {{water.due}}</strike>
+    <!-- this will mark task as complete -->
+    {%else%}
+    <span>{{water}}</span>
+    <span><b>Due:</b>{{water.due|timeuntil</span>
+        <!-- this will countdown due date -->
 {% endblock %}

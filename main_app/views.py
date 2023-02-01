@@ -8,12 +8,18 @@ from django.http import HttpResponse
 from django.urls import reverse
 
 
-from .models import MyPlant, Plant
+from .models import MyPlant, Plant, Water
 # Create your views here.
 
 # Home class 
 class Home(TemplateView):
     template_name = "home.html"
+
+    def get_context_data(self, **kwargs): 
+        context = super().get_context_data(self, **kwargs)
+        context["waters"]= Water.objects.all()
+        return context
+
 
 
 # Plant info class 
@@ -73,4 +79,5 @@ class MyPlantDelete(DeleteView):
 # About 
 class About(TemplateView):
     template_name= "about.html"
+
 
