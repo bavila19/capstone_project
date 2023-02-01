@@ -25,4 +25,13 @@ class Plant(models.Model):
 
     def __str__(self):
         return self.name
-        
+
+class Water(models.Model):
+    title = models.ForeignKey(MyPlant, on_delete=models.CASCADE, related_name="waters")
+    # img= models.ForeignKey(MyPlant, on_delete=models.CASCADE, related_name="waters")
+    complete = models.BooleanField(default=False)
+    created = models.DateTimeField
+    due = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
+
+    def __str(self):
+        return self.title
