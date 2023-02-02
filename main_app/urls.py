@@ -1,12 +1,13 @@
 from django.urls import path
 from . import views 
+# from .views import redirect_view
 
 urlpatterns = [
     #home & task list 
-    path('', views.Home.as_view(), name="home"),
+    # path('', views.Home, name="home"),
     # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
     # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
-
+    path('', views.WaterList, name = "waterlist"),
     #about page
     path('about/', views.About.as_view(), name="about"),
     #plant info

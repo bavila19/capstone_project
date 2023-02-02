@@ -1,3 +1,7 @@
+*{
+  outline: solid;
+  outline-color: aqua;
+}
 body {
   background-image: url(https://wallpaperaccess.com/full/1516567.jpg);
   color: #ffffff;
@@ -33,6 +37,7 @@ h3 {
 .gallery .card:hover {
   transform: scale(1.1);
   z-index: 10;
+  
 }
 
 p {

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from django.views import View 
 from django.views.generic.base import TemplateView
 # This will import the class we are extending 
@@ -6,21 +6,32 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.http import HttpResponse
 from django.urls import reverse
+from django import forms
+from django.forms import ModelForm
+
+from .form import WaterForm
 
 
-from .models import MyPlant, Plant, Water
+from .models import MyPlant, Plant,Water
 # Create your views here.
 
 # Home class 
-class Home(TemplateView):
-    template_name = "home.html"
-
-    def get_context_data(self, **kwargs): 
-        context = super().get_context_data(self, **kwargs)
-        context["waters"]= Water.objects.all()
-        return context
-
-
+# def WaterList(request):
+#     queryset = Water.objects.order_by('title', 'due')
+#     form = Water()
+#     if request.method =='POST':
+#         form=Water(request.Post)
+#         if form.is_valid():
+#             form.save()
+#         return redirect ('/')
+#     context = { 'waters': queryset,
+#                 'form': forms}
+#     return render(request, 'water_list.html', context)
+def WaterList(request):
+    water_list = Water.objects.order_by('id')
+    form = WaterForm()
+    context = {'water_list': water_list, 'form': form}
+    return render(request, 'water_list.html', context)
 
 # Plant info class 
 
