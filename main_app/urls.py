@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views 
+from . import views
 # from .views import redirect_view
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
     # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
     # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
     path('', views.WaterList, name = "waterlist"),
+    path('add', views.addWaterTodo, name='add'),
     #about page
     path('about/', views.About.as_view(), name="about"),
     #plant info

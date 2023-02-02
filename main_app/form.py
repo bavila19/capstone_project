@@ -1,13 +1,13 @@
 from django import forms
 from django.forms import Form
-from .models import Water
+from .models import Water, MyPlant
 
 
 class WaterForm(forms.Form):
     # template_name = "water_list.html"
-    title= forms.CharField(widget = forms.TextInput(attrs={'placeholder': 'Water Task Title'}), label =  False)
-    due= forms.CharField(widget = forms.TextInput(attrs={'placeholder': 'Due Date'}),label=False)
+    title= forms.ModelChoiceField(queryset = MyPlant.objects.all())
+    due= forms.CharField(widget = forms.DateInput(attrs={'placeholder': 'Due Date', 'type': 'date'}, format=('%Y-%m-%d %H:%M')),label=False)
 
     class Meta :
         model = Water
-        fields = ['title', 'due']
+        fields = ['title_id', 'due']

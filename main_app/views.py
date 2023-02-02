@@ -8,32 +8,42 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django import forms
 from django.forms import ModelForm
-
 from .form import WaterForm
-
-
+from django.views.decorators.http import require_POST
 from .models import MyPlant, Plant,Water
+from datetime import datetime
+from django.views.generic.list import ListView
+
 # Create your views here.
 
-# Home class 
-# def WaterList(request):
-#     queryset = Water.objects.order_by('title', 'due')
-#     form = Water()
-#     if request.method =='POST':
-#         form=Water(request.Post)
-#         if form.is_valid():
-#             form.save()
-#         return redirect ('/')
-#     context = { 'waters': queryset,
-#                 'form': forms}
-#     return render(request, 'water_list.html', context)
+
 def WaterList(request):
     water_list = Water.objects.order_by('id')
     form = WaterForm()
     context = {'water_list': water_list, 'form': form}
     return render(request, 'water_list.html', context)
 
-# Plant info class 
+@require_POST 
+def addWaterTodo(request):
+    
+
+    form = WaterForm(request.POST) 
+    print(request.POST)
+    if form.is_valid():
+        plant = MyPlant.objects.get(pk=int(request.POST['title'][0]))
+        datetime = request.POST.get("due")
+        new_water_todo = Water(title = plant, due = datetime )
+        new_water_todo.save()
+        
+        print(new_water_todo)
+
+    return redirect ('waterlist')
+# class WaterList(ListView):
+# 	model = Water
+
+# 	def __str__(self):
+# 		return self.title
+# Plant info class :
 
 
 class PlantInfo(TemplateView):
@@ -90,5 +100,7 @@ class MyPlantDelete(DeleteView):
 # About 
 class About(TemplateView):
     template_name= "about.html"
+
+
 
 
