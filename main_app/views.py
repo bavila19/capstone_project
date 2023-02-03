@@ -53,11 +53,11 @@ def addWaterTodo(request):
 
     return redirect ('waterlist')
     
-def completeTodo(request, todo_id):
+def CompleteWaterTodo(request, todo_id):
     todo = Water.objects.get(pk=todo_id)
     todo.complete = True
     todo.save()
-    return redirect('index')
+    return redirect('waterlist')
 
 
 class PlantInfo(TemplateView):

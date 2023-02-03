@@ -9,6 +9,8 @@ urlpatterns = [
     # path('waterupdate/<int:pk>', views.WaterUpdate.as_view(), name="water_update"),
     path('', views.WaterList, name = "waterlist"),
     path('add', views.addWaterTodo, name='add'),
+    path('complete/<int:todo_id>', views.CompleteWaterTodo, name='complete'),
+
     #about page
     path('about/', views.About.as_view(), name="about"),
     #plant info
