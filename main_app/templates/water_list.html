@@ -19,7 +19,7 @@
 	{% for water in water_list%}
 		<div class="item-row">
 
-			<span>4345 {{water.title.name}} {{water.due}}{{water.due.times}}</span>
+			<h1>  <a href="/{%url 'plant_info' %}">{{water.title.name}}</a> {{water.due}}{{water.due.times}}</h1>
 		</div>
 	{% endfor %}
 	</div>

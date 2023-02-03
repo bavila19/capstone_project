@@ -17,11 +17,25 @@ from django.views.generic.list import ListView
 # Create your views here.
 
 
-def WaterList(request):
+def WaterList(request, ):
     water_list = Water.objects.order_by('id')
     form = WaterForm()
     context = {'water_list': water_list, 'form': form}
     return render(request, 'water_list.html', context)
+
+# class WaterList(TemplateView):
+#     template_name= "water_list.html"
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         title = self.request.GET.get("title")
+#         if title != None:
+#             context ["waterlist"] = Water.objects.filter(name__icontains=title)
+#             context["header"]= f"I am looking for {title}"
+#         else:    
+#             context ["myplants"] = Water.objects.all()
+#             context["header"] = "The Todo List "
+#         return context
 
 @require_POST 
 def addWaterTodo(request):
@@ -38,12 +52,12 @@ def addWaterTodo(request):
         print(new_water_todo)
 
     return redirect ('waterlist')
-# class WaterList(ListView):
-# 	model = Water
-
-# 	def __str__(self):
-# 		return self.title
-# Plant info class :
+    
+def completeTodo(request, todo_id):
+    todo = Water.objects.get(pk=todo_id)
+    todo.complete = True
+    todo.save()
+    return redirect('index')
 
 
 class PlantInfo(TemplateView):
