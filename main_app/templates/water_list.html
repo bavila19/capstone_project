@@ -19,9 +19,10 @@
 	{% for water in water_list%}
 		<div class="item-row">
 
-			<h1>  <a href="{%url 'my_plant_detail' water.title.pk %}">{{water.title.name}}</a> {{water.due}}{{water.due.times}}</h1>
 			{%if water.complete == False %}
-			<a href="{% url 'complete' water.pk %}">Needs watering </a>
+			
+			
+			<h1>  <a href="{%url 'my_plant_detail' water.title.pk %}">{{water.title.name}}</a> {{water.due}}<a class="button is-dark" href="{% url 'complete' water.pk %}">complete</a></h1>
 			{%endif%}
 		</div>
 	{% endfor %}

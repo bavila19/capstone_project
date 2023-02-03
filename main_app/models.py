@@ -8,7 +8,7 @@ class MyPlant(models.Model):
     img = models.CharField(max_length=250)
     description = models.TextField(max_length=500)
     watering_info = models.TextField(max_length=250)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateField(auto_now_add=True)
     
     def __str__(self):
         return self.name
@@ -30,7 +30,7 @@ class Water(models.Model):
     title = models.ForeignKey(MyPlant, on_delete=models.CASCADE, related_name="waters")
     complete = models.BooleanField(default=False)
     created = models.DateTimeField
-    due = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
+    due = models.DateField(auto_now_add=False, auto_now=False, blank=True, null=True)
 
     def __str__(self):
         return str(self.title)
