@@ -12,7 +12,7 @@
   <div class="field has-addons">
     <div class="control">
       <!--  Our input will search by name of artist  -->
-      <input class="input" type="text" name="name" placeholder="name" />
+      <input class="input" type="text" name="name" placeholder="Plant Name" />
     </div>
     <div class="control">
       <input class="button is-success" type="submit" value="Search" />
@@ -23,7 +23,6 @@
 </form>
 <div class="gallery">
   {% for plant in plants %}
-  <a href="">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
@@ -35,16 +34,15 @@
         
       </div>
       <div class="content">
-        <h5>about plant</h5>
-        <p class="card-header-title">{{plant.description}}</p>
+        <h5>About the plant</h5>
+        <p class="card-detail">{{plant.description}}</p>
         <h5>propagate</h5>
-        <p class="card-header-title">{{plant.propagate}}</p>
+        <p class="card-detail">{{plant.propagate}}</p>
         <h5>Is it toxic to pets?</h5>
-        <p class="card-header-title">{{plant.toxic}}</p>
-
+        <p class="card-detail">{{plant.toxic}}</p>
       </div>
     </div>
-  </a>
+
 	{% empty %}
   <article class="message">
     <div class="message-header">

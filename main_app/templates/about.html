@@ -11,10 +11,19 @@
     </body>
 </html> -->
 
-{%extends 'base.html'%}
-{%block title%}
-About 
-{%endblock%}
-{%block content%}
-<h1>This page is about me!</h1>
+{%extends 'base.html'%} {%block title%} About {%endblock%} {%block content%}
+<div class="about">
+  <h1 class="about-title">About</h1>
+  <p class="about-description">
+    This website was made with the intention to help user's better understand
+    how to take care of certain plants and be able to upload their own plants to
+    keep track of growth.
+  </p>
+  <p class="about-description">
+    To see how everything comes together please visit
+    <a href="https://github.com/bavila19/capstone_project"
+      ><span>GitHub link</span></a
+    >
+  </p>
+</div>
 {%endblock%}

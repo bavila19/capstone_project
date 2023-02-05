@@ -27,6 +27,20 @@ h3 {
   gap: 30px;
 }
 
+
+h5{
+  padding: .075rem 1rem;
+  font-size: 20px;
+}
+.card-detail{
+  padding: .075rem 1rem;
+  font-size: 16px;
+}
+
+.card-header-title{
+  font-size: 22px;
+}
+
 .gallery .card {
   transition: 0.1s linear;
 }
@@ -38,17 +52,18 @@ h3 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .detail__img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 500px;
   background-color: #ffffff;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .detail__img::after {
@@ -79,3 +94,65 @@ img {
   margin-top: 500px;
 }
 
+#task{
+  margin-left: 20px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+
+.taskList{
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+a:Link, a:visited{
+  text-decoration:none;
+  color:rgb(173, 162, 236);
+}
+
+a:hover, a:active {
+  color: rgb(170, 149, 238);
+}
+
+.waterHeader{
+  margin-top: 30px;
+  font-size: 35px;
+}
+
+.button.is-success{
+  background-color: #26613a;
+}
+
+.title.is-4{
+  margin-top: 20px;
+}
+.list-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo-list{
+  border: 5px solid rgba(16, 68, 16, 0.452);
+  background-color:rgba(16, 68, 16, 0.481);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 0px;
+  padding-left: 10px;
+  width: 450px;
+}
+
+.about{
+  margin-top: 15px;
+  padding-bottom: 50px;
+}
+.about-description{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.about-title{
+  font-size: 30px;
+  font-weight: bold;
+}

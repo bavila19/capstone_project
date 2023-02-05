@@ -8,21 +8,22 @@
 {% block content %}
 
 
-<div class="container">
+<div class="list-container">
 	<form action="{%url 'add'%}"method="POST">
 		{% csrf_token %}
 		{{form}}
 		<input class="btn save" type="submit" name="save">
 	</form>
 	<div class="todo-list">
-		<h1>waterlist </h1>
+		<h1 class="waterHeader">Plants that need watering </h1>
 	{% for water in water_list%}
 		<div class="item-row">
 
 			{%if water.complete == False %}
 			
 			
-			<h1>  <a href="{%url 'my_plant_detail' water.title.pk %}">{{water.title.name}}</a> {{water.due}}<a class="button is-dark" href="{% url 'complete' water.pk %}">complete</a></h1>
+			<h1 class="taskList">  <a href="{%url 'my_plant_detail' water.title.pk %}">{{water.title.name}}</a> Will need to be watered on {{water.due}}</h1>
+			<a class="button is-dark" id="task" href="{% url 'complete' water.pk %}">Watering complete</a>
 			{%endif%}
 		</div>
 	{% endfor %}
