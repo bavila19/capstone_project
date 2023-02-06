@@ -1,6 +1,6 @@
 # capstone_project
 
-# Title: Rooted Eart 
+# Title: Rooted Earth 
 
 This home page includes a to-do list that lets users choose when to water existing plants. Once you have selected a plant and a watering date,  it will appear right under the watering list. When the user has completed watering a plant they can press the complete button and the task disappears from the page.Vist my website at https://rootedearth.herokuapp.com
 
