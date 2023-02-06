@@ -1,13 +1,7 @@
-
-
 {% extends 'base.html' %}
-
 {% comment %} for head title tags and helping us with SEO {% endcomment %}
 {% block title %}Plant Info{% endblock  %}
-
 {% block content %}
-
-
 <div class="list-container">
 	<form action="{%url 'add'%}"method="POST">
 		{% csrf_token %}
@@ -18,9 +12,7 @@
 		<h1 class="waterHeader">Plants that need watering </h1>
 	{% for water in water_list%}
 		<div class="item-row">
-
 			{%if water.complete == False %}
-			
 			
 			<h1 class="taskList">  <a href="{%url 'my_plant_detail' water.title.pk %}">{{water.title.name}}</a> Will need to be watered on {{water.due}}</h1>
 			<a class="button is-dark" id="task" href="{% url 'complete' water.pk %}">Watering complete</a>

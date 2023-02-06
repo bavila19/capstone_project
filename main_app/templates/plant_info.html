@@ -4,21 +4,17 @@
 
 {% comment %} for head title tags and helping us with SEO {% endcomment %}
 {% block title %}Plant Info{% endblock  %}
-
 {% block content %}
-
 <h1 class="title pt-5">{{header}}</h1>
 <form class="mb-5" method="get">
   <div class="field has-addons">
     <div class="control">
-      <!--  Our input will search by name of artist  -->
       <input class="input" type="text" name="name" placeholder="Plant Name" />
     </div>
     <div class="control">
       <input class="button is-success" type="submit" value="Search" />
     </div>
   </div>
-  <!--  This anchor tag will redirect back to artist list without a query param -->
   <a class="button is-dark" href="{% url 'plant_info' %}">Clear Search</a>
 </form>
 <div class="gallery">
@@ -31,7 +27,6 @@
       </div>
       <div class="card-header">
         <h2 class="card-header-title">{{plant.name}}</h2>
-        
       </div>
       <div class="content">
         <h5>About the plant</h5>
@@ -42,7 +37,6 @@
         <p class="card-detail">{{plant.toxic}}</p>
       </div>
     </div>
-
 	{% empty %}
   <article class="message">
     <div class="message-header">
