@@ -2,7 +2,7 @@
 
 # Title: Rooted Earth 
 
-This app was created with the intention to help users understand their plants and keep track of growth or any changes to their plants. The user can keep track of their plant growth by uploading pictures, a description and the plants watering schedule and setting a to-do task for their watering schedules.
+This app was created with the intention to help users understand their plants and keep track of growth or any changes to their plants. The user can keep track of their plant growth by uploading pictures, a description and the plants watering schedule and setting a to-do task for their watering schedules.By adding the feature of logging your own personal plant, their name and needs, it adds familiarity between the user,  their specific plants and the plants needs which increases the likelihood of consitent specialized care per the individual plant by doing this, chances of survival drastically increases and the user is more likely to see increased development per the species.
 To see it all come together visit my website at https://rootedearth.herokuapp.com
 
 Home Page: 
