@@ -3,7 +3,7 @@
 # Title: Rooted Earth 
 
 This app was created with the intention to help users understand their plants and keep track of growth or any changes to their plants. The user can keep track of their plant growth by uploading pictures, a description and the plants watering schedule and setting a to-do task for their watering schedules.
-Vist my website at https://rootedearth.herokuapp.com
+To see it all come together visit my website at https://rootedearth.herokuapp.com
 
 Home Page: 
 The home page has a watering to-do list where you can choose when plants from the “My Plant” page need to be watered. Once you have selected a plant and a watering date,  it will appear right under the watering list. When the user has completed watering a plant they can press the complete button and the task disappears from the page.The name of the selected plant is linked to the detail page, so when a user clicks on the name it will send them to that specific plant with all the information.
