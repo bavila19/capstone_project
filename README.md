@@ -38,6 +38,9 @@ Have the user be able to update the watering task
 
 
 Refrences:
-- GA resources 
+- GA provided notation. Such as 
+    - https://seir1031-materials.notion.site/Django-URLs-Views-and-Templates-9e15b3fb81e74a808b3fe0ee0cabac57
+    - https://seir1031-materials.notion.site/Django-Models-01f8b23c9e82487c8e5229acb95578a5
+    - https://seir1031-materials.notion.site/Django-One-to-Many-97990e65f1f14997afb1c45c87554bc3
 - POD leaders 
 - Form Articles 
