@@ -30,11 +30,21 @@ Technologies used:
 - Html
 - CSS Bulma
 - CSS Flexbox 
+# Installation 
+1. fork and clone repo
+2. pipenve shell
+- This will launch virtual environment.
+3. pipenv install
+- This will install dependencies
+4. python3 manage.py runserver
+- Will start up server
+5. http://localhost:8000
+- The app should appear in th browser
 
 Stretch Goals:
 User Authentication 
-Have the user be able to see the previous watering task 
-Have the user be able to update the watering task 
+- Have the user be able to see the previous watering task 
+- Have the user be able to update the watering task 
 
 
 Refrences:
@@ -44,3 +54,4 @@ Refrences:
     - https://seir1031-materials.notion.site/Django-One-to-Many-97990e65f1f14997afb1c45c87554bc3
 - POD leaders 
 - Form Articles 
+
