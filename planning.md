@@ -7,6 +7,9 @@ The user will open the app and be greeted by the home page, which will have a li
 # Wire Frame
 ![wireFrame](https://user-images.githubusercontent.com/116097159/215509909-fcf586e8-a33f-4884-b464-6159addd013c.png)
 
+# ERD 
+![erd](https://i.imgur.com/uLSqwEN.png)
+
 # Milestones
 Monday - Set up environment and make sure all pages are working.
 Tuesday - have full crud for my plants
